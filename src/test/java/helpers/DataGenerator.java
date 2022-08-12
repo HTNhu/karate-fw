@@ -2,6 +2,9 @@ package helpers;
 
 import com.github.javafaker.Faker;
 
+import java.util.Date;
+
+
 public class DataGenerator {
 
     public static String getRandomEmail(){
@@ -14,5 +17,12 @@ public class DataGenerator {
         Faker faker = new Faker();
         String username = faker.name().username();
         return username;
+    }
+    public static String getRandomArticleName(){
+        return "Article-" + Math.round(Math.random()*1000);
+    }
+
+    public static String getRandomComment(){
+        return "Comment is created at -" + new Date().toString();
     }
 }
